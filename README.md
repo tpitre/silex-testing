@@ -3,7 +3,7 @@
 First run:
 
 ```shell
-$ composer create-project fabpot/silex-skeleton path/to/install "~2.0"
+$ composer update
 ```
 
 To see a real-live Silex page in action, start the PHP built-in web server with command:
