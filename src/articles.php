@@ -18,7 +18,7 @@ $blog->get('/articles/{slug}', function ($slug) use ($app) {
   //print_r($data['data'][0]);
 
   return $app['twig']->render('articles.html.twig', array(
-    'article' => $data['data'],
+    'article' => $data,
   ));
 
   // Okay, we got some JSON back from a remote URL.

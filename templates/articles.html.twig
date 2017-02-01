@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>This is an article page.</h1>
-    <h2>Article Title: {{ article.attributes.title }}</h2>
-    <h3>Display Title: {{ article.attributes.field_article_display_title }}</h3>
-    <p>Sub Title: {{ article.attributes.field_article_subtitle }}</p>
+    <h2>Article Title: {{ article.data.attributes.title }}</h2>
+    <h3>Display Title: {{ article.data.attributes.field_article_display_title }}</h3>
+    <p>Sub Title: {{ article.data.attributes.field_article_subtitle }}</p>
 {% endblock %}
