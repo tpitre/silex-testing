@@ -5,7 +5,7 @@ $blog->get('/articles/{slug}', function ($slug) use ($app) {
 
   // Fetch the JSON from our external service. Basic error checking for the
   // status code ensures we're looking at the right thing
-  $response = $app['guzzle']->request('GET', 'https://jsonplaceholder.typicode.com/posts/'.$slug);
+  $response = $app['guzzle']->request('GET', 'http://7da-ecl.chromatic.is/api/node/article/' . $slug . '?_format=api_json');
   if ($response->getStatusCode() !== 200) {
 
   }
@@ -15,10 +15,10 @@ $blog->get('/articles/{slug}', function ($slug) use ($app) {
 
   $data = json_decode($json, true);
 
-  //print_r($data);
+  //print_r($data['data'][0]);
 
   return $app['twig']->render('articles.html.twig', array(
-    'article' => $data,
+    'article' => $data['data'],
   ));
 
   // Okay, we got some JSON back from a remote URL.
